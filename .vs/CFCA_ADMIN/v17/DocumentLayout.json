@@ -1,0 +1,501 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|c:\\users\\penoliar\\source\\repos\\cfca_admin\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\senior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:senior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\senior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:senior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\junior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:junior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\junior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:junior high school.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\basiceducation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:basiceducation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\basiceducation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:basiceducation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:add-admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:add_instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:add_instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\overlayform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:overlayform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\overlayform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:overlayform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\overlayform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:overlayform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:add-admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\admin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:admin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:instructors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:instructors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:enrollees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:enrollees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\subjectsmodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:subjectsmodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\subjectsmodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:subjectsmodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:add_instructor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D0C115D-2A76-4BA9-A0DA-46187E15B9CF}|CTFCA_ADMIN.csproj|solutionrelative:schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "add_instructor.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs",
+              "RelativeDocumentMoniker": "add_instructor.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs",
+              "RelativeToolTip": "add_instructor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:04:10.746Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "add-Admin.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-Admin.cs",
+              "RelativeDocumentMoniker": "add-Admin.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-Admin.cs",
+              "RelativeToolTip": "add-Admin.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAjwDIAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T07:57:49.635Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "add-Admin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-Admin.cs",
+              "RelativeDocumentMoniker": "add-Admin.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add-Admin.cs [Design]",
+              "RelativeToolTip": "add-Admin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T06:56:59.811Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "add_instructor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs",
+              "RelativeDocumentMoniker": "add_instructor.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.cs [Design]",
+              "RelativeToolTip": "add_instructor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T06:45:23.179Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Admin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.cs [Design]",
+              "RelativeToolTip": "Admin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T06:54:09.761Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.cs [Design]",
+              "RelativeToolTip": "Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T01:31:25.575Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.cs",
+              "RelativeToolTip": "Form2.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAjwHgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T06:13:14.395Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwDcAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T08:18:04.243Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T02:03:03.019Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Senior High School.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Senior High School.cs",
+              "RelativeDocumentMoniker": "Senior High School.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Senior High School.cs",
+              "RelativeToolTip": "Senior High School.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAASwAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T04:27:45.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Junior High School.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Junior High School.cs",
+              "RelativeDocumentMoniker": "Junior High School.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Junior High School.cs",
+              "RelativeToolTip": "Junior High School.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T04:27:34.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BasicEducation.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\BasicEducation.cs",
+              "RelativeDocumentMoniker": "BasicEducation.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\BasicEducation.cs",
+              "RelativeToolTip": "BasicEducation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T04:27:19.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Admin.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.Designer.cs",
+              "RelativeDocumentMoniker": "Admin.Designer.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.Designer.cs",
+              "RelativeToolTip": "Admin.Designer.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T08:40:56.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OverlayForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.Designer.cs",
+              "RelativeDocumentMoniker": "OverlayForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.Designer.cs",
+              "RelativeToolTip": "OverlayForm.Designer.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAD4vyYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T12:28:38.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Senior High School.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Senior High School.cs",
+              "RelativeDocumentMoniker": "Senior High School.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Senior High School.cs [Design]",
+              "RelativeToolTip": "Senior High School.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T05:51:07.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Admin.cs",
+              "RelativeToolTip": "Admin.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAEwB0AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T08:20:22.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Junior High School.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Junior High School.cs",
+              "RelativeDocumentMoniker": "Junior High School.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Junior High School.cs [Design]",
+              "RelativeToolTip": "Junior High School.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T05:51:28.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OverlayForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.cs",
+              "RelativeDocumentMoniker": "OverlayForm.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.cs [Design]",
+              "RelativeToolTip": "OverlayForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T08:53:26.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BasicEducation.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\BasicEducation.cs",
+              "RelativeDocumentMoniker": "BasicEducation.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\BasicEducation.cs [Design]",
+              "RelativeToolTip": "BasicEducation.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T05:50:51.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OverlayForm.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.cs",
+              "RelativeDocumentMoniker": "OverlayForm.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\OverlayForm.cs",
+              "RelativeToolTip": "OverlayForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T08:53:29.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\dashboard.cs",
+              "RelativeDocumentMoniker": "dashboard.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\dashboard.cs [Design]",
+              "RelativeToolTip": "dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T06:44:58.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "enrollees.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs",
+              "RelativeDocumentMoniker": "enrollees.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs [Design]",
+              "RelativeToolTip": "enrollees.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T08:25:22.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "instructors.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs",
+              "RelativeDocumentMoniker": "instructors.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs [Design]",
+              "RelativeToolTip": "instructors.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T11:32:36.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "instructors.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs",
+              "RelativeDocumentMoniker": "instructors.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\instructors.cs",
+              "RelativeToolTip": "instructors.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAwIUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T11:54:09.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "enrollees.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs",
+              "RelativeDocumentMoniker": "enrollees.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\enrollees.cs",
+              "RelativeToolTip": "enrollees.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAmwH0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T11:15:46.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Form2.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.Designer.cs",
+              "RelativeDocumentMoniker": "Form2.Designer.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\Form2.Designer.cs",
+              "RelativeToolTip": "Form2.Designer.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAmwJIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T02:18:21.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SubjectsModal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\SubjectsModal.cs",
+              "RelativeDocumentMoniker": "SubjectsModal.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\SubjectsModal.cs [Design]",
+              "RelativeToolTip": "SubjectsModal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T04:25:53.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SubjectsModal.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\SubjectsModal.cs",
+              "RelativeDocumentMoniker": "SubjectsModal.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\SubjectsModal.cs",
+              "RelativeToolTip": "SubjectsModal.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T01:48:39.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "add_instructor.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.Designer.cs",
+              "RelativeDocumentMoniker": "add_instructor.Designer.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\add_instructor.Designer.cs",
+              "RelativeToolTip": "add_instructor.Designer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T06:20:14.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "schedule.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\schedule.cs",
+              "RelativeDocumentMoniker": "schedule.cs",
+              "ToolTip": "C:\\Users\\Penoliar\\source\\repos\\CFCA_ADMIN\\schedule.cs [Design]",
+              "RelativeToolTip": "schedule.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T06:46:07.066Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -138,23 +138,25 @@
             this.dtgInstructors.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgInstructors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInstructors_CellClick);
             this.dtgInstructors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInstructors_CellContentClick);
-            this.dtgInstructors.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgInstructors_CellFormatting);
             // 
             // btnNew
             // 
-            this.btnNew.BorderRadius = 10;
+            this.btnNew.BorderRadius = 17;
             this.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNew.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
-            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(761, 47);
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNew.Location = new System.Drawing.Point(629, 47);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(80, 33);
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "New";
+            this.btnNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // dataGridViewImageColumn1
@@ -187,7 +189,7 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.BorderRadius = 10;
+            this.tbSearch.BorderRadius = 17;
             this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbSearch.DefaultText = "";
             this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -198,7 +200,7 @@
             this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearch.IconLeft")));
-            this.tbSearch.Location = new System.Drawing.Point(602, 44);
+            this.tbSearch.Location = new System.Drawing.Point(715, 44);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PlaceholderText = "Search";
             this.tbSearch.SelectedText = "";
@@ -214,7 +216,7 @@
             this.Instructors_ID.ReadOnly = true;
             this.Instructors_ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Instructors_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Instructors_ID.Width = 40;
+            this.Instructors_ID.Width = 45;
             // 
             // image
             // 
@@ -230,7 +232,7 @@
             this.Full_Name.HeaderText = "Full Name";
             this.Full_Name.Name = "Full_Name";
             this.Full_Name.ReadOnly = true;
-            this.Full_Name.Width = 146;
+            this.Full_Name.Width = 145;
             // 
             // Gender
             // 
@@ -238,7 +240,7 @@
             this.Gender.HeaderText = "Gender";
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
-            this.Gender.Width = 45;
+            this.Gender.Width = 44;
             // 
             // Age
             // 
@@ -246,7 +248,7 @@
             this.Age.HeaderText = "Age";
             this.Age.Name = "Age";
             this.Age.ReadOnly = true;
-            this.Age.Width = 35;
+            this.Age.Width = 34;
             // 
             // Contact_No
             // 
@@ -254,7 +256,7 @@
             this.Contact_No.HeaderText = "Contact_No";
             this.Contact_No.Name = "Contact_No";
             this.Contact_No.ReadOnly = true;
-            this.Contact_No.Width = 65;
+            this.Contact_No.Width = 64;
             // 
             // Employment
             // 
@@ -262,7 +264,7 @@
             this.Employment.HeaderText = "Employment";
             this.Employment.Name = "Employment";
             this.Employment.ReadOnly = true;
-            this.Employment.Width = 65;
+            this.Employment.Width = 64;
             // 
             // Subjects
             // 

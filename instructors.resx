@@ -188,7 +188,7 @@
   <data name="Delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAFz
-        +gABc/oBTx5eqAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVHhe7ZvP
+        +AABc/gBMOCdIQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVHhe7ZvP
         ShtRFMazb/sEtavapxAkRlRQcOtWfABBUBdKbeNOQQWRWAR9BEF3unIhNf4BbUHwBfzTLhREUazJ6fky
         xyZzexLjTGbiTO4HP4Rzv+s998tNZhYzCU3U2vqJUqmv1Na2y1wweYYiBno+Z7KFvfCeZHvlRS0t73jC
         N+YPo/3TKIM9ZSiZfCvbdYsT+sBJ/TQmxZEjDqFJtu0IqfDAD8MYZxBC8SRwAcdeM8aZBWfz+MGL53f+
@@ -203,6 +203,21 @@
         tLGh9/ByCg9L/zKK3ujqIpqe1h+DryVTU85aWg8v5xwBZI1i45BMfk/w5QYvSOqG+PO5sV+aSqU+Om+O
         4Y1K3RRn5gubhxrwxclD6ux8I9t3xCE08cCRYYwjh3z038u23ZKTsMA8lEyIC9jT/H+fvCYOopnNE8wO
         g1fQo/v6PF/q+O/Evx88lxKJv2ZQuSRfgoxfAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHcSURBVFhHzZdP
+        TsJAFIeJiaIRXJkQlyo7XXgZiF6DI5gQvIGAN+AUuvDvxj830B26VBN0g9+vfY0RS9uZttEv+ZIynTfv
+        0Xam00pWptNpHQ/wBG/wGT9NHV/jEPexbmH5YbANPMZ3zIr6qtCmDeMOwSt4iG/oi67OEVZt2GwQ0MQH
+        LIpzbNjwydBxD8eKKpgn3LU08dBB/7yM5BGPGH8lOLGMt+pVMhf4+5mgUQ+cKyr4Ljx0omdpQ2jQVHN9
+        2pV4wbxXgwMfuG3pgwI0z10ZWbjiR2GTE8MoeA1dFpmIvAXoitcUrOXVh7wFiLaCtWT6UEQBAwXrxeJD
+        EQVcKvglPJ6LppoSzNqx/BqjM3MuMm2KjhWsKTGPYKpZHmcUi0lTdPIvCki7BRog7vJmuQVpC1RwC/78
+        IdQ2yociCugrWHs4H4oooKXgGr4GP93IW0C4FNsAPqth3gIGFh4MoJ2QNpAu5HkdT3DT0ofQoN2rK0rs
+        mlx0Le03NC7iWXC6XLRDjt+mc6KB2r2WxfxNaQQddrGMIpR8x9IkQ8d1PFVUQWT/MIkgoIo9THpZpaHY
+        Li7ZsO4QvIVarl12zVrYBvhzquWBwbRitrGPV6gvKP1DqWO1aXfdwlULS6FS+QKi4zP29y+t3wAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <data name="dataGridViewCellStyle9.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -242,7 +257,7 @@
   <data name="dataGridViewImageColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAFz
-        +wABc/sBnVm8TAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVHhe7ZvP
+        +QABc/kB4qd/xQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMoSURBVHhe7ZvP
         ShtRFMazb/sEtavapxAkRlRQcOtWfABBUBdKbeNOQQWRWAR9BEF3unIhNf4BbUHwBfzTLhREUazJ6fky
         xyZzexLjTGbiTO4HP4Rzv+s998tNZhYzCU3U2vqJUqmv1Na2y1wweYYiBno+Z7KFvfCeZHvlRS0t73jC
         N+YPo/3TKIM9ZSiZfCvbdYsT+sBJ/TQmxZEjDqFJtu0IqfDAD8MYZxBC8SRwAcdeM8aZBWfz+MGL53f+

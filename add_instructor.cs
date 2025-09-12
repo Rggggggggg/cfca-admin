@@ -12,47 +12,72 @@ using System.Windows.Forms;
 
 namespace CFCA_ADMIN
 {
-    public partial class add_instructor : UserControl
+    public partial class add_instructor : Form
     {
-        private instructors _parent;
-
-        public add_instructor(instructors parent, string instructorId = null)
+        private string currentInstructorId = null;
+        private Dictionary<string, List<string>> gradeToSubjects = new Dictionary<string, List<string>>();
+        public add_instructor(string instructorId = null)
         {
             InitializeComponent();
-            _parent = parent;
+            currentInstructorId = instructorId;
+            gradeToSubjects = LoadSubjectsFromDB();
 
             if (!string.IsNullOrEmpty(instructorId))
             {
                 LoadInstructorData(instructorId);
             }
-        }
-
-        public add_instructor()
-        {
-            InitializeComponent();
-        }
-
-        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            tbAge.KeyPress += NumericOnly_KeyPress;
+            tbContact.KeyPress += NumericOnly_KeyPress;
         }
 
         private void instructor_Load(object sender, EventArgs e)
         {
             clbGradesLevelHandled.ItemCheck += clbGradesLevelHandled_ItemCheck;
             // Only apply these defaults if not in edit mode
-            if (string.IsNullOrEmpty(tbInstructorID.Text)) // Means: we are adding, not editing
+            // Only apply these defaults if not in edit mode
+            if (string.IsNullOrEmpty(currentInstructorId))
             {
-                if (cbGender.Items.Count > 0)
-                    cbGender.SelectedIndex = 0;
-                if (cbCivilStatus.Items.Count > 0)
-                    cbCivilStatus.SelectedIndex = 0;
-                if (cbEmployment.Items.Count > 0)
-                    cbEmployment.SelectedIndex = 0;
+                GenerateNewInstructorID();
+                SetDefaultValues();
             }
+        }
+
+        private void GenerateNewInstructorID()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT MAX(CAST(SUBSTRING(instructors_id, 4) AS UNSIGNED)) FROM instructor_accounts WHERE instructors_id LIKE 'INS%'";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    object result = cmd.ExecuteScalar();
+                    int nextNumber = (result == DBNull.Value) ? 1 : Convert.ToInt32(result) + 1;
+
+                    tbInstructorID.Text = "INS" + nextNumber.ToString("D3"); // INS001, INS002, etc.
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error generating instructor ID: " + ex.Message);
+                    tbInstructorID.Text = "INS001"; // Fallback
+                }
+            }
+        }
+
+        private void SetDefaultValues()
+        {
+            if (cbGender.Items.Count > 0)
+                cbGender.SelectedIndex = 0;
+            if (cbCivilStatus.Items.Count > 0)
+                cbCivilStatus.SelectedIndex = 0;
+            if (cbEmployment.Items.Count > 0)
+                cbEmployment.SelectedIndex = 0;
         }
         private byte[] ImageToByteArray(Image image)
         {
+            if (image == null) return null;
+
             int maxWidth = 300;  // Resize width
             int maxHeight = 300; // Resize height
 
@@ -85,85 +110,6 @@ namespace CFCA_ADMIN
             }
         }
 
-
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection conn = Database.GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-
-                    // Only treat as edit if the instructor already exists in the database
-                    bool isEdit = false;
-                    using (var checkCmd = new MySqlCommand("SELECT COUNT(*) FROM instructor_accounts WHERE instructors_id = @id", conn))
-                    {
-                        checkCmd.Parameters.AddWithValue("@id", tbInstructorID.Text);
-                        isEdit = Convert.ToInt32(checkCmd.ExecuteScalar()) > 0;
-                    }
-
-                    string query;
-                    if (isEdit)
-                    {
-                        // UPDATE if editing
-                        query = @"UPDATE instructor_accounts SET
-                            firstname = @firstname,
-                            middlename = @middlename,
-                            lastname = @lastname,
-                            gender = @gender,
-                            age = @age,
-                            date_of_birth = @dob,
-                            civil_status = @civil_status,
-                            contact_no = @contact_no,
-                            email = @email,
-                            image = @image,
-                            employment = @employment,
-                            subject_assigned = @subject_assigned,
-                            grades_level_handled = @grades_level_handled
-                        WHERE instructors_id = @instructors_id";
-                    }
-                    else
-                    {
-                        // INSERT if adding
-                        query = @"INSERT INTO instructor_accounts
-                            (firstname, middlename, lastname, gender, age, date_of_birth, civil_status, contact_no, email, image, employment, instructors_id, subject_assigned, grades_level_handled)
-                            VALUES
-                            (@firstname, @middlename, @lastname, @gender, @age, @dob, @civil_status, @contact_no, @email, @image, @employment, @instructors_id, @subject_assigned, @grades_level_handled)";
-                    }
-
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                    cmd.Parameters.AddWithValue("@firstname", tbFirstname.Text);
-                    cmd.Parameters.AddWithValue("@middlename", tbMiddlename.Text);
-                    cmd.Parameters.AddWithValue("@lastname", tbLastname.Text);
-                    cmd.Parameters.AddWithValue("@gender", cbGender.Text);
-                    cmd.Parameters.AddWithValue("@age", tbAge.Text);
-                    cmd.Parameters.AddWithValue("@dob", dtpDOB.Value.ToString("yyyy-MM-dd"));
-                    cmd.Parameters.AddWithValue("@civil_status", cbCivilStatus.Text);
-                    cmd.Parameters.AddWithValue("@contact_no", tbContact.Text);
-                    cmd.Parameters.AddWithValue("@email", tbEmail.Text);
-
-                    Image img = btnChooseImage.Image;
-                    byte[] imageBytes = ImageToByteArray(img);
-                    cmd.Parameters.AddWithValue("@image", imageBytes);
-
-                    cmd.Parameters.AddWithValue("@employment", cbEmployment.Text);
-                    cmd.Parameters.AddWithValue("@instructors_id", tbInstructorID.Text);
-                    cmd.Parameters.AddWithValue("@subject_assigned", string.Join(", ", clbSubjectAssigned.CheckedItems.Cast<string>()));
-                    cmd.Parameters.AddWithValue("@grades_level_handled", string.Join(", ", clbGradesLevelHandled.CheckedItems.Cast<string>()));
-
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show(isEdit ? "Instructor updated successfully!" : "Instructor saved successfully!");
-                    _parent.LoadInstructors();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
         // Add this method to handle loading instructor data
         private void LoadInstructorData(string instructorId)
         {
@@ -233,180 +179,47 @@ namespace CFCA_ADMIN
             }
         }
 
-        private void btnChooseImage_Click(object sender, EventArgs e)
+        private Dictionary<string, List<string>> LoadSubjectsFromDB()
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Select an Image";
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            var result = new Dictionary<string, List<string>>();
 
-                if (ofd.ShowDialog() == DialogResult.OK)
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
                 {
-                    using (var img = Image.FromFile(ofd.FileName))
+                    conn.Open();
+                    string query = "SELECT grade_level, subject_name FROM subjects ORDER BY grade_level, subject_name";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        btnChooseImage.Image = new Bitmap(img); // clone the image
-                        btnChooseImage.Text = "";
+                        while (reader.Read())
+                        {
+                            string gradeLevel = reader["grade_level"].ToString();
+                            string subjectName = reader["subject_name"].ToString();
+
+                            if (!result.ContainsKey(gradeLevel))
+                                result[gradeLevel] = new List<string>();
+
+                            result[gradeLevel].Add(subjectName);
+                        }
                     }
-
                 }
-            }
-        }
-
-        private void cbCivilStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            {
-                DialogResult result = MessageBox.Show(
-                    "Are you sure you want to go back? Unsaved changes will be lost.",
-                    "Confirm Exit",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                catch (Exception ex)
                 {
-                    Form parentForm = this.FindForm();
-                    parentForm?.Close();
+                    MessageBox.Show("Error loading subjects: " + ex.Message);
                 }
             }
+
+            return result;
         }
 
-        private void dtpDOB_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private Dictionary<string, List<string>> gradeToSubjects = new Dictionary<string, List<string>>()
-{
-    { "Nursery", new List<string> {
-        "FILIPINO", "LANGUAGE", "READING", "MATH", "SCIENCE", "G.M.R.C.", "WRITING"
-    }},
-    { "Kinder 1", new List<string> {
-        "FILIPINO", "LANGUAGE", "READING", "MATH", "SCIENCE", "G.M.R.C.", "WRITING", "ARALING PANLIPUNAN"
-    }},
-    { "Kinder 2 (P)", new List<string> {
-        "FILIPINO", "LANGUAGE", "READING", "MATH", "SCIENCE", "G.M.R.C.", "WRITING", "ARALING PANLIPUNAN"
-    }},
-    { "Grade 1", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "COMPUTER", "G.M.R.C."
-    }},
-    { "Grade 2", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "COMPUTER", "G.M.R.C.", "MOTHER TONGUE"
-    }},
-    { "Grade 3", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "COMPUTER", "G.M.R.C.", "MOTHER TONGUE"
-    }},
-    { "Grade 4", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "HELE & COMPUTER", "G.M.R.C."
-    }},
-    { "Grade 5", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "HELE & COMPUTER", "G.M.R.C."
-    }},
-    { "Grade 6", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & HEALTH", "SOCIAL STUDIES",
-        "MAPEH", "HELE & COMPUTER", "G.M.R.C."
-    }},
-    { "Grade 7", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS", "SCIENCE & TECHNOLOGY", "ARALING PANLIPUNAN",
-        "TECHNOLOGY & LIVELIHOOD EDUCATION / COMPUTER", "MAPEH", "VALUES EDUCATION"
-    }},
-    { "Grade 8", new List<string> {
-        "FILIPINO", "ENGLISH & JOURNALISM", "MATHEMATICS", "SCIENCE & TECHNOLOGY",
-        "ARALING PANLIPUNAN", "TECHNOLOGY & LIVELIHOOD EDUCATION / COMPUTER",
-        "MAPEH", "VALUES EDUCATION"
-    }},
-    { "Grade 9", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS / TRIGONOMETRY", "SCIENCE & TECHNOLOGY",
-        "ARALING PANLIPUNAN", "TECHNOLOGY & LIVELIHOOD EDUCATION / COMPUTER",
-        "MAPEH", "VALUES EDUCATION"
-    }},
-    { "Grade 10", new List<string> {
-        "FILIPINO", "ENGLISH", "MATHEMATICS / ANA.GEOM.", "SCIENCE & TECHNOLOGY",
-        "ARALING PANLIPUNAN", "TECHNOLOGY & LIVELIHOOD EDUCATION / COMPUTER",
-        "MAPEH", "VALUES EDUCATION", "COMMUNITY SERVICE"
-    }},
-    { "Grade 11 STEM", new List<string> {
-        "General Mathematics", "Oral Communication", "Earth Science",
-        "Komunikasyon at Pananaliksik sa Wikang Filipino",
-        "21st Century Literature from the Philippines and the World",
-        "Physical Education and Health", "Empowerment Technologies (E-Tech)",
-        "Pagsulat sa Filipino sa Piling Larangan (Akademik, Isports, Sining at Tech-Voc)",
-        "Pre-Calculus", "General Biology 1", "Statistics and Probability",
-        "Reading and Writing", "Disaster Readines and Risk Reduction",
-        "Pagbasa at Pagsusuri sa Iba't ibang Teksto Tungo sa Pananaliksik",
-        "Personal Development", "Entrepreneurship", "Practical Research 1",
-        "Basic Calculus", "General Biology 2"
-    }},
-    { "Grade 11 ABM", new List<string> {
-        "General Mathematics", "21st Century Literature from the Philippines and the World",
-        "Oral Communication", "Earth and Life Science",
-        "Komunikasyon at Pananaliksik sa Wika at Kulturang Pilipino",
-        "Physical Education and Health", "Empowerment Technologies (E-Tech)",
-        "Pagsulat sa Filipino sa Piling Larangan (Akademik, Isports, Sining at Tech-Voc)",
-        "Business Math", "Organization and Management", "Statistics and Probability",
-        "Reading and Writing", "Pagbasa at Pagsusuri sa Iba't ibang Teksto Tungo sa Pananaliksik",
-        "Physical Science", "Personal Development", "Entrepreneurship",
-        "Research Project", "Fundamentals of Accounting and Business Management 1",
-        "Principles of Marketing"
-    }},
-    { "Grade 11 HUMSS", new List<string> {
-        "General Mathematics", "21st Century Literature from the Philippines and the World",
-        "Oral Communication", "Earth and Life Science",
-        "Komunikasyon at Pananaliksik sa Wika at Kulturang Pilipino",
-        "Physical Education and Health", "Pagsulat sa Filipino sa Piling Larangan (Akademik)",
-        "Empowerment Technologies (E-Tech): ICT for Professional Tracks",
-        "Discipline and Ideas in the Social Sciences", "Reading and Writing Skills",
-        "Pagbasa at Pagsusuri ng Ibat't-Ibang Teksto Tungo sa Pananaliksik",
-        "Physical Science", "Statistics and Probability",
-        "Personal Development / Pansariling Kaunlaran", "Entrepreneurship",
-        "Research in Daily Life 1", "Philippine Politics and Governance"
-    }},
-    { "Grade 12 STEM", new List<string> {
-        "Understanding Culture, Society and Politics", "Contemporary Philippine Arts from the Region",
-        "Introduction to the Philosophy", "Physical Education and Health",
-        "English for Academic and Professional Purposes", "Practical Research 2",
-        "General Physics 1", "Chemistry 1", "Media and Information Literacy",
-        "Inquiries, Investigations and Immersion", "General Physics 2",
-        "General Chemistry 2", "Capstone Project / Research Project"
-    }},
-    { "Grade 12 ABM", new List<string> {
-        "Understanding Culture, Society and Politics", "Introduction to the Philosophy of the Human Person",
-        "Contemporary Philippine Arts from the Region", "Physical Education and Health",
-        "English for Academic and Professional Purposes", "Practical Research 2",
-        "Applied Economics", "Fundamentals of Accounting and Business Management 2",
-        "Media and Information Literacy", "Research Project",
-        "Business Finance", "Business Enterprise Simulation",
-        "Business Ethics and Social Responsibility"
-    }},
-    { "Grade 12 HUMSS", new List<string> {
-        "Understanding Culture, Society and Politics", "Introduction to the Philosophy of the Human Person",
-        "Contemporary Philippine Arts from the Region", "Physical Education and Health",
-        "English for Academic and Professional Purposes", "Research in Daily Life 2",
-        "Discipline and Ideas in Applied Social Sciences", "Creative Writing",
-        "Media and Information Literacy", "Research Project",
-        "Community Engagement, Solidarity and Citizenship",
-        "Introduction to World Religions and Belief System", "Culminating Activity",
-        "Trends, Networks and Critical Thinking in the 21st Century",
-        "Creative Nonfiction: Literary Essay"
-    }}
-};
-
-        private void clbGradesLevelHandled_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void clbGradesLevelHandled_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (this.IsHandleCreated)
             {
-                this.BeginInvoke((MethodInvoker)delegate {
+                this.BeginInvoke((MethodInvoker)delegate
+                {
                     UpdateSubjectsBasedOnGrades();
                 });
             }
@@ -440,6 +253,294 @@ namespace CFCA_ADMIN
                     }
                 }
             }
+        }
+
+        private bool ValidateInputs()
+        {
+            // Required field validation
+            if (string.IsNullOrWhiteSpace(tbFirstname.Text))
+            {
+                MessageBox.Show("First name is required.", "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbFirstname.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbLastname.Text))
+            {
+                MessageBox.Show("Last name is required.", "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbLastname.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbInstructorID.Text))
+            {
+                MessageBox.Show("Instructor ID is required.", "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbInstructorID.Focus();
+                return false;
+            }
+
+            // Age validation
+            if (!string.IsNullOrWhiteSpace(tbAge.Text))
+            {
+                if (!int.TryParse(tbAge.Text, out int age) || age < 18 || age > 100)
+                {
+                    MessageBox.Show("Please enter a valid age between 18 and 100.", "Validation Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbAge.Focus();
+                    return false;
+                }
+            }
+
+            // Email validation (basic)
+            if (!string.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                if (!IsValidEmail(tbEmail.Text))
+                {
+                    MessageBox.Show("Please enter a valid email address.", "Validation Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbEmail.Focus();
+                    return false;
+                }
+            }
+
+            // Phone validation (basic)
+            if (!string.IsNullOrWhiteSpace(tbContact.Text))
+            {
+                if (tbContact.Text.Length < 10)
+                {
+                    MessageBox.Show("Please enter a valid contact number.", "Validation Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbContact.Focus();
+                    return false;
+                }
+            }
+
+            // Check if at least one grade level is selected
+            if (clbGradesLevelHandled.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Please select at least one grade level.", "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Check if at least one subject is selected
+            var selectedSubjects = clbSubjectAssigned.CheckedItems.Cast<string>()
+                                 .Where(item => !item.StartsWith("---")).ToList();
+            if (selectedSubjects.Count == 0)
+            {
+                MessageBox.Show("Please select at least one subject.", "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private bool InstructorIdExists(MySqlConnection conn, string instructorId, string currentId = null)
+        {
+            string checkQuery = "SELECT COUNT(*) FROM instructor_accounts WHERE instructors_id = @id";
+            if (!string.IsNullOrEmpty(currentId))
+            {
+                checkQuery += " AND instructors_id != @currentId";
+            }
+
+            using (var cmd = new MySqlCommand(checkQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("@id", instructorId);
+                if (!string.IsNullOrEmpty(currentId))
+                    cmd.Parameters.AddWithValue("@currentId", currentId);
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                    "Are you sure you want to go back? Unsaved changes will be lost.",
+                    "Confirm Exit",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            // Validate inputs first
+            if (!ValidateInputs())
+            {
+                return;
+            }
+
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Check if instructor ID already exists (for new entries)
+                    bool isEdit = !string.IsNullOrEmpty(currentInstructorId);
+
+                    if (!isEdit && InstructorIdExists(conn, tbInstructorID.Text))
+                    {
+                        MessageBox.Show("Instructor ID already exists. Please use a different ID.",
+                                      "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        tbInstructorID.Focus();
+                        return;
+                    }
+
+                    string query;
+                    if (isEdit)
+                    {
+                        // UPDATE if editing
+                        query = @"UPDATE instructor_accounts SET
+                            firstname = @firstname,
+                            middlename = @middlename,
+                            lastname = @lastname,
+                            gender = @gender,
+                            age = @age,
+                            date_of_birth = @dob,
+                            civil_status = @civil_status,
+                            contact_no = @contact_no,
+                            email = @email,
+                            image = @image,
+                            employment = @employment,
+                            subject_assigned = @subject_assigned,
+                            grades_level_handled = @grades_level_handled
+                        WHERE instructors_id = @instructors_id";
+                    }
+                    else
+                    {
+                        // INSERT if adding
+                        query = @"INSERT INTO instructor_accounts
+                            (instructors_id, firstname, middlename, lastname, gender, age, date_of_birth, 
+                             civil_status, contact_no, email, image, employment, subject_assigned, grades_level_handled)
+                            VALUES
+                            (@instructors_id, @firstname, @middlename, @lastname, @gender, @age, @dob, 
+                             @civil_status, @contact_no, @email, @image, @employment, @subject_assigned, @grades_level_handled)";
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@instructors_id", tbInstructorID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@firstname", tbFirstname.Text.Trim());
+                        cmd.Parameters.AddWithValue("@middlename", tbMiddlename.Text.Trim());
+                        cmd.Parameters.AddWithValue("@lastname", tbLastname.Text.Trim());
+                        cmd.Parameters.AddWithValue("@gender", cbGender.Text);
+                        cmd.Parameters.AddWithValue("@age", string.IsNullOrWhiteSpace(tbAge.Text) ? (object)DBNull.Value : int.Parse(tbAge.Text));
+                        cmd.Parameters.AddWithValue("@dob", dtpDOB.Value.Date);
+                        cmd.Parameters.AddWithValue("@civil_status", cbCivilStatus.Text);
+                        cmd.Parameters.AddWithValue("@contact_no", tbContact.Text.Trim());
+                        cmd.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                        cmd.Parameters.AddWithValue("@employment", cbEmployment.Text);
+
+                        // Handle image - only save if there's an image
+                        if (btnChooseImage.Image != null)
+                        {
+                            byte[] imageBytes = ImageToByteArray(btnChooseImage.Image);
+                            cmd.Parameters.AddWithValue("@image", imageBytes);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@image", DBNull.Value);
+                        }
+
+                        // Get only non-header subjects
+                        var selectedSubjects = clbSubjectAssigned.CheckedItems.Cast<string>()
+                                             .Where(item => !item.StartsWith("---"))
+                                             .ToList();
+                        cmd.Parameters.AddWithValue("@subject_assigned", string.Join(", ", selectedSubjects));
+
+                        var selectedGrades = clbGradesLevelHandled.CheckedItems.Cast<string>().ToList();
+                        cmd.Parameters.AddWithValue("@grades_level_handled", string.Join(", ", selectedGrades));
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show(isEdit ? "Instructor updated successfully!" : "Instructor added successfully!",
+                                          "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Operation failed. Please try again.", "Error",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (MySqlException mysqlEx)
+                {
+                    MessageBox.Show($"Database error: {mysqlEx.Message}", "Database Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnChooseImage_Click(object sender, EventArgs e)
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    ofd.Title = "Select an Image";
+                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var img = Image.FromFile(ofd.FileName))
+                        {
+                        // Dispose previous image to free memory
+                        if (btnChooseImage.Image != null)
+                            btnChooseImage.Image.Dispose();
+
+                        btnChooseImage.Image = new Bitmap(img); // clone the image
+                        btnChooseImage.Text = "";
+                    }
+
+                    }
+                }
+            }
+        private void NumericOnly_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (e.g., Backspace, Delete)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Block non-numeric input
+            }
+        }
+
+
+        private void ScrollPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

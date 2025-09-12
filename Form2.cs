@@ -32,66 +32,90 @@ namespace CFCA_ADMIN
             panelContainer.Controls.Add(uc);       // Load new control
         }
 
+        private void SetNewEnrolleesArrowRight()
+        {
+            btnNewEnrollees.CustomImages = new Guna.UI2.WinForms.Suite.ButtonImages
+            {
+                Image = Properties.Resources.arrow_right
+            };
+        }
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             lblAdmin.Text = btnDashboard.Text; // Set the label text to the button text
-            LoadControl(new dashboard()); // Assuming DashboardControl is a UserControl you already created
+            LoadControl(new dashboard());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
         }
 
         private void btnInstructor_Click(object sender, EventArgs e)
         {
             lblAdmin.Text = btnInstructor.Text; // Set the label text to the button text
-            LoadControl(new instructors()); 
+            LoadControl(new instructors());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             lblAdmin.Text = btnSchedule.Text;
             LoadControl(new schedule());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
         }
         private bool isSubMenuVisible = false;
-        private void guna2Button1_Click(object sender, EventArgs e)
+
+        private void btnNewEnrollees_Click_1(object sender, EventArgs e)
         {
-            lblAdmin.Text = btnNewEnrollees.Text; // Set the label text to the button text
+            lblAdmin.Text = btnBasicEd.Text; // Set the label text to the button text
+
+            // Check the fill color of the button
+            Color targetColor = Color.FromArgb(42, 130, 254);
+            bool isBlueFill = btnNewEnrollees.CheckedState.FillColor == targetColor;
+
             if (isSubMenuVisible)
             {
                 // Collapse
                 panelSubEnrollees.Height = 0;
                 panelSubEnrollees.Visible = false;
 
-
+                btnNewEnrollees.CustomImages = new Guna.UI2.WinForms.Suite.ButtonImages
+                {
+                    Image = isBlueFill ? Properties.Resources.arrow_right_white : Properties.Resources.arrow_right
+                };
             }
             else
             {
-                // Expand (adjust height based on # of buttons)
-                panelSubEnrollees.Height = panelSubEnrollees.Controls.Count * 46; // adjust 35 per button height
+                panelSubEnrollees.Height = panelSubEnrollees.Controls.Count * 46;
                 panelSubEnrollees.Visible = true;
-
+                btnNewEnrollees.CustomImages = new Guna.UI2.WinForms.Suite.ButtonImages
+                {
+                    Image = Properties.Resources.arrow_down
+                };
             }
 
             isSubMenuVisible = !isSubMenuVisible;
-
-            // Adjust position of next controls (e.g., btnAdmin)
             AdjustSidebarButtons();
-            LoadControl(new enrollees());
+            btnBasicEd.PerformClick();
 
         }
+
         private void AdjustSidebarButtons()
         {
             if (panelSubEnrollees.Visible)
             {
-                btnAdmin.Top = panelSubEnrollees.Bottom + 5;
+                btnStudents.Top = panelSubEnrollees.Bottom + 5;
+                btnAdmin.Top = btnStudents.Bottom + 5;
+                btnSubjects.Top = btnAdmin.Bottom + 5; // Adjust position of btnSubjects
             }
             else
             {
-                btnAdmin.Top = btnNewEnrollees.Bottom + 5; // if submenu is hidden
+                btnStudents.Top = btnNewEnrollees.Bottom + 5; // Adjust position of btnStudents
+                btnAdmin.Top = btnStudents.Bottom + 5; // if submenu is hidden
+                btnSubjects.Top = btnAdmin.Bottom + 5; // Adjust position of btnSubjects
             }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -113,6 +137,7 @@ namespace CFCA_ADMIN
             btnBasicEd.Click += SubMenuButton_Click;
             btnJHS.Click += SubMenuButton_Click;
             btnSHS.Click += SubMenuButton_Click;
+            btnDashboard.PerformClick(); // Load dashboard by default
 
         }
         private void SubMenuButton_Click(object sender, EventArgs e)
@@ -122,10 +147,10 @@ namespace CFCA_ADMIN
             {
                 lblAdmin.Text = clickedBtn.Text;
 
-                // Optional: Load a user control based on the button
+                // Load a user control based on the button
                 if (clickedBtn == btnBasicEd)
                 {
-                    LoadControl(new BasicEducation());
+                    LoadControl(new enrollees());
                 }
                 else if (clickedBtn == btnJHS)
                 {
@@ -139,20 +164,67 @@ namespace CFCA_ADMIN
         }
 
 
-        private void picArrow_Click(object sender, EventArgs e)
-        {
-            
-        }
+    
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             lblAdmin.Text = btnAdmin.Text; // Set the label text to the button text
             LoadControl(new Admin());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
         }
 
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+               
+                this.Hide(); 
+                Form1 login = new Form1(); 
+                Application.Exit();
+            }
+        }
+
+        private void lblRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnStudents_Click(object sender, EventArgs e)
+        {
+            lblAdmin.Text = btnStudents.Text; 
+            LoadControl(new Students());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
+        }
+
+        private void btnSubjects_Click(object sender, EventArgs e)
+        {
+            lblAdmin.Text = btnSubjects.Text;
+            LoadControl(new Subjects());
+            HideSubMenu();
+            SetNewEnrolleesArrowRight();
+        }
+        private void HideSubMenu()
+        {
+            panelSubEnrollees.Visible = false;
+            panelSubEnrollees.Height = 0;
+            isSubMenuVisible = false;
+            AdjustSidebarButtons();
+        }
+
+       
     }
 }

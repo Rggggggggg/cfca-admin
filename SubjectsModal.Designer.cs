@@ -56,6 +56,7 @@
             this.tbSubjects.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSubjects.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSubjects.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.tbSubjects.ForeColor = System.Drawing.Color.Black;
             this.tbSubjects.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSubjects.Location = new System.Drawing.Point(30, 62);
             this.tbSubjects.Multiline = true;

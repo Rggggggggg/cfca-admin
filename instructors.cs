@@ -74,27 +74,24 @@ namespace CFCA_ADMIN
 
         private void dtgInstructors_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Prevent out-of-bounds errors
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
-            // Replace with your actual column indexes or names
-            int editColumnIndex = 9;   // Example: Edit button column index
-            int deleteColumnIndex = 10; // Example: Delete button column index
+            int editColumnIndex = 9;   
+            int deleteColumnIndex = 10; 
 
-            // Get the instructor ID from the first column (adjust if needed)
             string instructorId = dtgInstructors.Rows[e.RowIndex].Cells[0].Value?.ToString();
 
             if (e.ColumnIndex == editColumnIndex)
             {
                 // Open your edit form or user control here
-                Form editForm = new Form();
-                var editInstructor = new add_instructor(this, instructorId); // You may need to add a constructor for editing
-                editForm.FormBorderStyle = FormBorderStyle.None;
-                editForm.Controls.Add(editInstructor);
-                editForm.StartPosition = FormStartPosition.CenterScreen;
-                editForm.Size = new Size(789, 543);
-                editForm.ShowDialog();
+                Form parentform = this.FindForm();
+                OverlayForm overlay = new OverlayForm(parentform);
+                overlay.Show();
+                add_instructor AddInstructor = new add_instructor(instructorId);
+                AddInstructor.ShowDialog();
+                overlay.Dispose();
+                LoadInstructors(); 
             }
             else if (e.ColumnIndex == deleteColumnIndex)
             {
@@ -124,14 +121,13 @@ namespace CFCA_ADMIN
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Form addInstructorForm = new Form();
-            var addInstructor = new add_instructor(this); // ✅ This passes the parent
-
-            addInstructorForm.FormBorderStyle = FormBorderStyle.None;
-            addInstructorForm.Controls.Add(addInstructor); // ✅ Use the correct instance here
-            addInstructorForm.StartPosition = FormStartPosition.CenterScreen;
-            addInstructorForm.Size = new Size(789, 543);
-            addInstructorForm.ShowDialog();
+            Form parentform = this.FindForm();
+            OverlayForm overlay = new OverlayForm(parentform);
+            overlay.Show();
+            add_instructor AddInstructor = new add_instructor();
+            AddInstructor.ShowDialog(null);
+            overlay.Dispose();
+            LoadInstructors(); 
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -147,18 +143,6 @@ namespace CFCA_ADMIN
 
                 bool visible = InstructorID.Contains(filterText) || fullName.Contains(filterText);
                 row.Visible = visible;
-            }
-        }
-
-        private void dtgInstructors_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dtgInstructors.Columns[e.ColumnIndex].Name == "Subjects" && e.Value != null)
-            {
-                string fullText = e.Value.ToString();
-                string preview = string.Join(", ", fullText.Split(',').Take(4)) + "...";
-
-                e.Value = preview;
-                dtgInstructors.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = fullText;
             }
         }
 

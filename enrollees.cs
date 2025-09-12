@@ -18,7 +18,7 @@ namespace CFCA_ADMIN
         {
             InitializeComponent();
         }
-        private void LoadStudentData()
+        private void LoadStudentData(string statusFilter = "Pending")
         {
             using (MySqlConnection conn = Database.GetConnection())
             {
@@ -29,6 +29,11 @@ namespace CFCA_ADMIN
                              first_name, middle_name, gender, age, contact, 
                              submitted_at
                              FROM basic_ed_enrollment";
+
+                    if (statusFilter != "All")
+                    {
+                        query += $" WHERE enrollment_status = '{statusFilter}'";
+                    }
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -69,58 +74,122 @@ namespace CFCA_ADMIN
             return bmp;
         }
 
-
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            LoadStudentData();
-        }
-
         private void enrollees_Load(object sender, EventArgs e)
         {
             dtgEnrollees.AlternatingRowsDefaultCellStyle = dtgEnrollees.RowsDefaultCellStyle;
             dtgEnrollees.AutoGenerateColumns = false;
-            LoadStudentData();
+
+            cbStatusFilter.SelectedIndex = 0; // Default = Pending
+            LoadStudentData("Pending");
         }
 
         private void dtgEnrollees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string studentNumber = dtgEnrollees.Rows[e.RowIndex].Cells["student_number"].Value?.ToString();
+            string name = dtgEnrollees.Rows[e.RowIndex].Cells["name"].Value?.ToString();
+            string columnName = dtgEnrollees.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "btnConfirm")
             {
+                ConfirmEnrollment(studentNumber, name);
+            }
+            else if (columnName == "btnDelete")
+            {
+               RejectEnrollment(studentNumber, name);
+            }
+        }
+
+        private void ConfirmEnrollment(string studentNumber, string name)
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
                 {
-                    // Skip header row
-                    if (e.RowIndex < 0)
-                        return;
+                    conn.Open();
 
-                    // Confirm button
-                    if (dtgEnrollees.Columns[e.ColumnIndex].Name == "btnConfirm")
+                    // Use INSERT INTO ... SELECT to copy data in one operation
+                    string transferQuery = @"
+                INSERT INTO students (
+                    student_number, level_for_registrar, lrn, level_applied, surname, first_name, middle_name, age, gender, dob,
+                    pob, citizenship, religion, address, contact, email, father_name, father_occupation, father_office, father_contact, 
+                    father_email, mother_name, mother_occupation, mother_office, mother_contact, mother_email, status, guardian_name, guardian_relation, 
+                    guardian_occupation, guardian_contact, guardian_email, has_siblings, prev_ctfcai, prev_grade, prev_sy, prev_school, prev_school_sy, prev_school_addr, 
+                    health_conditions, emergency_name, emergency_address, emergency_contact, student_photo, signature_filename, signature_date
+                )
+                SELECT 
+                    student_number, level_for_registrar, lrn, level_applied, surname, first_name, middle_name, age, gender, dob,
+                    pob, citizenship, religion, address, contact, email, father_name, father_occupation, father_office, father_contact, 
+                    father_email, mother_name, mother_occupation, mother_office, mother_contact, mother_email, status, guardian_name, guardian_relation, 
+                    guardian_occupation, guardian_contact, guardian_email, has_siblings, prev_ctfcai, prev_grade, prev_sy, prev_school, prev_school_sy, prev_school_addr, 
+                    health_conditions, emergency_name, emergency_address, emergency_contact, student_photo, signature_filename, signature_date
+                FROM basic_ed_enrollment 
+                WHERE student_number = @student_number";
+
+                    MySqlCommand transferCmd = new MySqlCommand(transferQuery, conn);
+                    transferCmd.Parameters.AddWithValue("@student_number", studentNumber);
+
+                    int rowsAffected = transferCmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
                     {
-                        string name = dtgEnrollees.Rows[e.RowIndex].Cells["name"].Value.ToString();
-                        MessageBox.Show("Confirmed student: " + name);
-                        // Add confirmation logic here
+                        UpdateStatus(conn, studentNumber);
+                        MessageBox.Show($"Student {name} enrolled successfully");
+                        LoadStudentData(cbStatusFilter.Text);
                     }
-
-                    // Delete button
-                    if (dtgEnrollees.Columns[e.ColumnIndex].Name == "btnDelete")
+                    else
                     {
-                        string name = dtgEnrollees.Rows[e.RowIndex].Cells["name"].Value.ToString();
-                        DialogResult result = MessageBox.Show("Are you sure you want to delete student: " + name + "?", "Confirm Delete", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes)
-                        {
-                            // Add delete logic here
-                            MessageBox.Show("Deleted student: " + name);
-                        }
+                        MessageBox.Show("Student record not found.");
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
             }
+        }
+
+        private void RejectEnrollment(string studentNumber, string name)
+        {
+            DialogResult result = MessageBox.Show($"Are you sure you want to reject this student: {name}?",
+                                                 "Confirm Reject", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string updateQuery = "UPDATE basic_ed_enrollment SET enrollment_status = 'Rejected' WHERE student_number = @student_number";
+                    MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@student_number", studentNumber);
+                    updateCmd.ExecuteNonQuery();
+                    MessageBox.Show($"Student {name} rejected successfully");
+                    LoadStudentData(cbStatusFilter.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+        private void UpdateStatus(MySqlConnection conn, string studentNumber)
+        {
+            string updateQuery = "UPDATE basic_ed_enrollment SET enrollment_status = 'Confirmed' WHERE student_number = @student_number";
+            MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
+            updateCmd.Parameters.AddWithValue("@student_number", studentNumber);
+            updateCmd.ExecuteNonQuery();
+        }
+
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             string filterText = tbSearch.Text.ToLower();
 
             foreach (DataGridViewRow row in dtgEnrollees.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                // Assuming column 1 = Student Number, column 3 = Full Name
+            { 
                 string studentNumber = row.Cells[0].Value?.ToString().ToLower();
                 string levelApplied = row.Cells[2].Value?.ToString().ToLower();
                 string fullName = row.Cells[1].Value?.ToString().ToLower();
@@ -128,6 +197,13 @@ namespace CFCA_ADMIN
                 bool visible = studentNumber.Contains(filterText) || fullName.Contains(filterText) || levelApplied.Contains(filterText);
                 row.Visible = visible;
             }
+        }
+
+        private void cbStatusFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSearch.Clear();
+            string selectedStatus = cbStatusFilter.SelectedItem.ToString();
+            LoadStudentData(selectedStatus);
         }
     }
 }

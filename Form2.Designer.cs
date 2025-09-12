@@ -30,11 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblAdmin = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnStudents = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSubjects = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panelSubEnrollees = new System.Windows.Forms.Panel();
             this.btnSHS = new Guna.UI2.WinForms.Guna2Button();
             this.btnJHS = new Guna.UI2.WinForms.Guna2Button();
@@ -48,24 +52,18 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnNewEnrollees = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
-            this.pic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.lblRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.panelSubEnrollees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.lblRole);
             this.guna2Panel1.Controls.Add(this.pic);
             this.guna2Panel1.Controls.Add(this.lblName);
@@ -74,14 +72,38 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(211, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(871, 72);
+            this.guna2Panel1.Size = new System.Drawing.Size(871, 66);
             this.guna2Panel1.TabIndex = 4;
+            // 
+            // lblRole
+            // 
+            this.lblRole.BackColor = System.Drawing.Color.Transparent;
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRole.Location = new System.Drawing.Point(747, 35);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(26, 15);
+            this.lblRole.TabIndex = 3;
+            this.lblRole.Text = "Role";
+            this.lblRole.Click += new System.EventHandler(this.lblRole_Click);
+            // 
+            // pic
+            // 
+            this.pic.BackColor = System.Drawing.Color.Transparent;
+            this.pic.ImageRotate = 0F;
+            this.pic.Location = new System.Drawing.Point(699, 11);
+            this.pic.Name = "pic";
+            this.pic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pic.Size = new System.Drawing.Size(40, 40);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic.TabIndex = 2;
+            this.pic.TabStop = false;
             // 
             // lblName
             // 
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(747, 15);
+            this.lblName.Location = new System.Drawing.Point(747, 14);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(33, 15);
             this.lblName.TabIndex = 1;
@@ -92,7 +114,7 @@
             this.lblAdmin.BackColor = System.Drawing.Color.Transparent;
             this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.lblAdmin.Location = new System.Drawing.Point(17, 23);
+            this.lblAdmin.Location = new System.Drawing.Point(17, 20);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(117, 27);
             this.lblAdmin.TabIndex = 0;
@@ -100,8 +122,12 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.btnStudents);
+            this.guna2Panel2.Controls.Add(this.btnSubjects);
+            this.guna2Panel2.Controls.Add(this.btnLogout);
             this.guna2Panel2.Controls.Add(this.panelSubEnrollees);
             this.guna2Panel2.Controls.Add(this.btnDashboard);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
@@ -112,11 +138,90 @@
             this.guna2Panel2.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel2.Controls.Add(this.btnNewEnrollees);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(211, 673);
             this.guna2Panel2.TabIndex = 3;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.BackColor = System.Drawing.Color.Transparent;
+            this.btnStudents.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnStudents.BorderRadius = 10;
+            this.btnStudents.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnStudents.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnStudents.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnStudents.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnStudents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnStudents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnStudents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnStudents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnStudents.FillColor = System.Drawing.Color.Transparent;
+            this.btnStudents.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnStudents.Image = ((System.Drawing.Image)(resources.GetObject("btnStudents.Image")));
+            this.btnStudents.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStudents.Location = new System.Drawing.Point(5, 460);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(193, 41);
+            this.btnStudents.TabIndex = 9;
+            this.btnStudents.Text = "Students";
+            this.btnStudents.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
+            // 
+            // btnSubjects
+            // 
+            this.btnSubjects.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubjects.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnSubjects.BorderRadius = 10;
+            this.btnSubjects.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSubjects.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnSubjects.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSubjects.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnSubjects.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubjects.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubjects.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSubjects.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSubjects.FillColor = System.Drawing.Color.Transparent;
+            this.btnSubjects.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnSubjects.Image = ((System.Drawing.Image)(resources.GetObject("btnSubjects.Image")));
+            this.btnSubjects.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSubjects.Location = new System.Drawing.Point(5, 554);
+            this.btnSubjects.Name = "btnSubjects";
+            this.btnSubjects.Size = new System.Drawing.Size(193, 41);
+            this.btnSubjects.TabIndex = 8;
+            this.btnSubjects.Text = "Subjects";
+            this.btnSubjects.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLogout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
+            this.btnLogout.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Location = new System.Drawing.Point(0, 632);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(211, 41);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panelSubEnrollees
             // 
@@ -139,7 +244,7 @@
             this.btnSHS.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSHS.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnSHS.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSHS.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnSHS.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnSHS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSHS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -166,7 +271,7 @@
             this.btnJHS.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnJHS.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnJHS.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnJHS.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnJHS.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnJHS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnJHS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnJHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -193,7 +298,7 @@
             this.btnBasicEd.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnBasicEd.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnBasicEd.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnBasicEd.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnBasicEd.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnBasicEd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBasicEd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBasicEd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -220,7 +325,7 @@
             this.btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnDashboard.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnDashboard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -257,7 +362,7 @@
             this.btnInstructor.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnInstructor.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnInstructor.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnInstructor.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnInstructor.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btnInstructor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnInstructor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnInstructor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -283,7 +388,7 @@
             this.btnAdmin.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnAdmin.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnAdmin.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnAdmin.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.btnAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -293,7 +398,7 @@
             this.btnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
             this.btnAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdmin.Location = new System.Drawing.Point(5, 465);
+            this.btnAdmin.Location = new System.Drawing.Point(5, 507);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(193, 41);
             this.btnAdmin.TabIndex = 4;
@@ -320,7 +425,7 @@
             this.btnSchedule.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSchedule.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnSchedule.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnSchedule.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.btnSchedule.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSchedule.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSchedule.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -358,7 +463,8 @@
             this.btnNewEnrollees.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnNewEnrollees.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
             this.btnNewEnrollees.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnNewEnrollees.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnNewEnrollees.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnNewEnrollees.CustomImages.Image = global::CFCA_ADMIN.Properties.Resources.arrow_right;
             this.btnNewEnrollees.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNewEnrollees.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNewEnrollees.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -374,39 +480,23 @@
             this.btnNewEnrollees.TabIndex = 3;
             this.btnNewEnrollees.Text = "New Enrollees";
             this.btnNewEnrollees.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNewEnrollees.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnNewEnrollees.Click += new System.EventHandler(this.btnNewEnrollees_Click_1);
             // 
             // panelContainer
             // 
+            this.panelContainer.BorderThickness = 1;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.FillColor = System.Drawing.Color.White;
-            this.panelContainer.Location = new System.Drawing.Point(211, 72);
+            this.panelContainer.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContainer.Location = new System.Drawing.Point(211, 66);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(871, 601);
+            this.panelContainer.Size = new System.Drawing.Size(871, 607);
             this.panelContainer.TabIndex = 13;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint_1);
             // 
-            // pic
+            // guna2AnimateWindow1
             // 
-            this.pic.BackColor = System.Drawing.Color.Transparent;
-            this.pic.ImageRotate = 0F;
-            this.pic.Location = new System.Drawing.Point(699, 12);
-            this.pic.Name = "pic";
-            this.pic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pic.Size = new System.Drawing.Size(40, 40);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic.TabIndex = 2;
-            this.pic.TabStop = false;
-            // 
-            // lblRole
-            // 
-            this.lblRole.BackColor = System.Drawing.Color.Transparent;
-            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblRole.Location = new System.Drawing.Point(747, 36);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(26, 15);
-            this.lblRole.TabIndex = 3;
-            this.lblRole.Text = "Role";
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // Form2
             // 
@@ -417,23 +507,23 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.panelSubEnrollees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAdmin;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -450,8 +540,12 @@
         private Guna.UI2.WinForms.Guna2Button btnJHS;
         private Guna.UI2.WinForms.Guna2Button btnBasicEd;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblName;
-        private Guna.UI2.WinForms.Guna2Panel panelContainer;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRole;
+        private Guna.UI2.WinForms.Guna2Panel panelContainer;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2Button btnSubjects;
+        private Guna.UI2.WinForms.Guna2Button btnStudents;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

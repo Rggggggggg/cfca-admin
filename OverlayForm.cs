@@ -21,5 +21,10 @@ namespace CFCA_ADMIN
                 this.Location = owner.Location;
             }
         }
+
+        private void OverlayForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

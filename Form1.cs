@@ -16,6 +16,7 @@ namespace CFCA_ADMIN
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = btnLogin;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -93,6 +94,18 @@ namespace CFCA_ADMIN
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            ForgotPassword forgotPasswordForm = new ForgotPassword();
+            forgotPasswordForm.ShowDialog(); // Show as modal dialog
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

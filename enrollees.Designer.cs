@@ -36,10 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(enrollees));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dtgEnrollees = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Student_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level_applied = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,23 +51,6 @@
             this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEnrollees)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(130)))), ((int)(((byte)(254)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(731, 71);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(80, 33);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Refresh";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Elipse1
             // 
@@ -114,7 +97,7 @@
             this.dtgEnrollees.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgEnrollees.EnableHeadersVisualStyles = true;
             this.dtgEnrollees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgEnrollees.Location = new System.Drawing.Point(12, 110);
+            this.dtgEnrollees.Location = new System.Drawing.Point(3, 86);
             this.dtgEnrollees.Name = "dtgEnrollees";
             this.dtgEnrollees.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -127,7 +110,7 @@
             this.dtgEnrollees.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgEnrollees.RowHeadersVisible = false;
             this.dtgEnrollees.RowTemplate.Height = 45;
-            this.dtgEnrollees.Size = new System.Drawing.Size(837, 433);
+            this.dtgEnrollees.Size = new System.Drawing.Size(865, 433);
             this.dtgEnrollees.TabIndex = 2;
             this.dtgEnrollees.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtgEnrollees.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -154,7 +137,7 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.BorderRadius = 10;
+            this.tbSearch.BorderRadius = 17;
             this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbSearch.DefaultText = "";
             this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -165,13 +148,37 @@
             this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearch.IconLeft")));
-            this.tbSearch.Location = new System.Drawing.Point(572, 68);
+            this.tbSearch.Location = new System.Drawing.Point(715, 44);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PlaceholderText = "Search";
             this.tbSearch.SelectedText = "";
             this.tbSearch.Size = new System.Drawing.Size(153, 36);
             this.tbSearch.TabIndex = 3;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            // 
+            // cbStatusFilter
+            // 
+            this.cbStatusFilter.AutoRoundedCorners = true;
+            this.cbStatusFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatusFilter.BorderRadius = 17;
+            this.cbStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatusFilter.DropDownWidth = 155;
+            this.cbStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbStatusFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbStatusFilter.ItemHeight = 30;
+            this.cbStatusFilter.Items.AddRange(new object[] {
+            "Pending",
+            "Confirmed",
+            "Rejected",
+            "All"});
+            this.cbStatusFilter.Location = new System.Drawing.Point(3, 44);
+            this.cbStatusFilter.Name = "cbStatusFilter";
+            this.cbStatusFilter.Size = new System.Drawing.Size(152, 36);
+            this.cbStatusFilter.TabIndex = 7;
+            this.cbStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cbStatusFilter_SelectedIndexChanged);
             // 
             // Student_Number
             // 
@@ -187,7 +194,7 @@
             this.name.HeaderText = "name";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 185;
+            this.name.Width = 195;
             // 
             // level_applied
             // 
@@ -264,10 +271,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.cbStatusFilter);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.dtgEnrollees);
-            this.Controls.Add(this.guna2Button1);
             this.Name = "enrollees";
             this.Size = new System.Drawing.Size(871, 601);
             this.Load += new System.EventHandler(this.enrollees_Load);
@@ -277,10 +284,10 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DataGridView dtgEnrollees;
         private Guna.UI2.WinForms.Guna2TextBox tbSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox cbStatusFilter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Student_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn level_applied;

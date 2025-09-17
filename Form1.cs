@@ -17,6 +17,7 @@ namespace CFCA_ADMIN
         {
             InitializeComponent();
             this.AcceptButton = btnLogin;
+            this.Shown += (s, e) => tbUsername.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace CFCA_ADMIN
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            tbUsername.Focus();
         }
 
         private void ForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

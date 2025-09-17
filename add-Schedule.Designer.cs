@@ -232,7 +232,7 @@
             "2nd Semester"});
             this.cbSemester.Location = new System.Drawing.Point(105, 263);
             this.cbSemester.Name = "cbSemester";
-            this.cbSemester.Size = new System.Drawing.Size(126, 36);
+            this.cbSemester.Size = new System.Drawing.Size(317, 36);
             this.cbSemester.TabIndex = 42;
             // 
             // guna2HtmlLabel5

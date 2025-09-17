@@ -179,7 +179,10 @@
         hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
 </value>
   </data>
-  <data name="dataGridViewCellStyle7.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <metadata name="btnGrades.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridViewCellStyle5.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
@@ -196,7 +199,49 @@
         hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
 </value>
   </data>
+  <data name="btnGrades.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAEQElEQVRYR7VXa0+URxTeb+0P8TtovERro9UaUVvD936oH5rW6hIKiHdtpaZp2kiL2EhBbWWXlZuw
+        C4KCoECLQrnjWoRCLXIpaINGWuW2nM5znHn33fedvRjxIU8ynHPmmbMz75yZcZix3O3cFu9O8sa7nROC
+        i4K0RITWRHyBs3yFa0+CHC6IjT/telMEeEwdXi9de90YUw7vcAjjSw/+TslBcvXdoPzf62mjaOtiotDF
+        g7+Ydm2AjelN56l57C5ld1fQzZEeUrjxoIfOdFeyb1/TOW1fHeMKnFvx631Wh44JZccosBiQQ4bHgojZ
+        WnZUq6FhGRKYtBhtfM/7BR29lS+HIPp3boaq77fR951eJtr/zc9IL9GR5nzuo9MyM87t/BsJBKwOM9Ma
+        88QvX5TSRPUPunn94VtflM5Ee1PpoZBlwWylir5mLQ0DSEDnMIgBFTDAioIkw3flz1aqHGo1/oevYaRX
+        RhPVDXcZvnCMmsBXvxWx2PP5Wdp8+bBhf993gmcGRFvZ3xUxiAVOthYa9nCMmAC2V+PoHRa7Ln7N2sJU
+        8txrIP8/f9HUzDTbAbRhgw8xdXLWGkTfDSUHtNqKERO44K9lISCnt5ptRf1N0mIHfIhBrMJ5f02IppUR
+        EzAL5fZeZRvWuXjAngRs6vvIvXNNWonO9lSFaFoZMYG3ivaRb6iFhfBxKfvXbSVsMwM25VfL5h28LTTS
+        DLuOUT/CrE4fi80uzNP28uNsUzOANQYB2ODb4f2c5gILbPuuszxES8eoCWArKbRNDNAqTzKlNObShzWn
+        jJhdNZlsg6998g8ZTVQ73BmipWPUBD6tP0MzC3NSkngAXZXbKbZix+SgjCLus1v0tcZZGTUBEFspueFH
+        KU00L6b49ngfn4Qg2jgDFJJv5tCG4v1aLStjSgBEEcJ3EA2z4pdvFmVZp6FjTAmsuZRCpzrK6JO6bKoS
+        B8+JFg+XYQWU4wxhg+9jEYNY9NFpWRlTAhAHOsT6X7hbS3lin2N7ZXX5mOsK09gGH2IA9NFpWRlTAgOP
+        R1lUoW9qxBZzT9jMGHwyTsvdwYMrHKMmgF1ghbkoKap6YMaS7IJfxvxSLghV883UleemUb8tzsqICWBv
+        my8jClh3a+zprgrpDWJR/CVWfGmLNTNiAuFOvsO//myLPdJ8UXpDUdjfaIs1Ewlor2RvF6cb97zhpw+p
+        99F9bgMfXc+yxcOmgFj0AaABLWu8JF/J8AqyOXGQPBM3GxzJqz2f8a1HFSJdKYYNwEGUWJFBK8W58E17
+        KU3PPaPMDv2h9OJSKp5LOucP4p5vrWgou1jX1ZoiAxt8iDHboQEts01RvAtKHXgc6Jw6ovj0T41qfSD2
+        vrolx0TX3i38OsJbTRug4QdXv9XawUg+GwucF3lwgB+nL5HEqzLOnZS/7HTSG3L4ILAc4q14GR+HCFzS
+        5zk0sebGtDMcjv8BVZRYuCaau8IAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="dataGridViewCellStyle8.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+</value>
+  </data>
+  <data name="dataGridViewCellStyle9.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG

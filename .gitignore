@@ -10,3 +10,6 @@ obj/
 *.exe
 *.zip
 *.log
+
+# Keep installer project file
+!CTFCA_Installer/*.vdproj
